@@ -6,9 +6,10 @@ const loadCategories = async () => {
     // console.log(data.data.news_category);
 }
 
-
 const displayCategories = (categories) => {
-    const categoriesContainer = document.getElementById('categories-conatiner')
+    const categoriesContainer = document.getElementById('categories-conatiner');
+    const categoryName = document.getElementById('category-name');
+
     categories.forEach(category => {
         console.log(category);
         const li = document.createElement('li');

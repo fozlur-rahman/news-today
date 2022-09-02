@@ -7,8 +7,15 @@ const loadCategoryNews = async (categoryId) => {
 }
 
 const displayCategoryNews = (newses) => {
+    console.log(newses);
+    const notFount = document.getElementById('not-found');
+
+    const newsLength = document.getElementById('news-lenght');
+    newsLength.innerText = newses.length;
+
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = ``;
+
     newses.forEach(news => {
         const div = document.createElement('div');
         div.classList.add('row', 'g-0');
