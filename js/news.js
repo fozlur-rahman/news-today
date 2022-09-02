@@ -9,7 +9,11 @@ const loadCategoryNews = async (categoryId) => {
 const displayCategoryNews = (newses) => {
     console.log(newses);
     const notFount = document.getElementById('not-found');
-
+    if (newses.length === 0) {
+        notFount.classList.remove('d-none');
+    } else {
+        notFount.classList.add('d-none');
+    }
     const newsLength = document.getElementById('news-lenght');
     newsLength.innerText = newses.length;
 
@@ -18,10 +22,11 @@ const displayCategoryNews = (newses) => {
 
     newses.forEach(news => {
         const div = document.createElement('div');
-        div.classList.add('row', 'g-0');
+        // div.classList.add('card');
         console.log(news);
         div.innerHTML = `
-           <div class="col-md-4">
+               <div class=" row g-0 shadow my-5">
+                <div class="col-md-4 ">
                     <img src="${news.thumbnail_url}" class="img-fluid rounded-start" alt="...">
                 </div>
                 <div class="col-md-8">
@@ -46,6 +51,7 @@ const displayCategoryNews = (newses) => {
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
         `
         newsContainer.appendChild(div);
