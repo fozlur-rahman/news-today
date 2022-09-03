@@ -21,6 +21,8 @@ const displayCategories = (categories) => {
         `
         categoriesContainer.appendChild(li);
     });
+
+    loadCategoryNews('01');
 }
 
 loadCategories();

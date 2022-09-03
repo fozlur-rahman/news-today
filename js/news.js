@@ -10,6 +10,7 @@ const loadCategoryNews = async (categoryId) => {
     displayCategoryNews(nwesSortData);
 
 
+
 }
 
 
@@ -33,7 +34,7 @@ const displayCategoryNews = (newses) => {
         // div.classList.add('card');
         console.log(news);
         div.innerHTML = `
-            <button onclick="loadDeatilsnews('${news._id}')" type="button" class="btn border-0" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button onclick="loadDeatilsnews('${news._id}')" type="button" class="btn border-0"     data-bs-toggle="modal" data-bs-target="#exampleModal"> 
                <div class=" row g-0 shadow my-3 p-4 rounded-3">
                 <div class="col-md-3 ">
                     <img src="${news.thumbnail_url}" class="img-fluid rounded-start md-d-block" alt="...">
