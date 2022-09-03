@@ -19,6 +19,7 @@ const displayCategories = (categories) => {
         `
         categoriesContainer.appendChild(li);
     });
+    
 }
 
 loadCategories();
