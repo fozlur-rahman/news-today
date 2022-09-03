@@ -4,8 +4,11 @@ const loadCategoryNews = async (categoryId) => {
     const url = `https://openapi.programming-hero.com/api/news/category/${categoryId}`;
     const res = await fetch(url);
     const data = await res.json();
-    displayCategoryNews(data.data);
-    // console.log(data.data);
+    const newsData = data.data;
+    const nwesSortData = newsData.sort((s1, s2) => s2.total_view - s1.total_view);
+    console.log(nwesSortData);
+    displayCategoryNews(nwesSortData);
+
 
 }
 
@@ -13,7 +16,6 @@ const loadCategoryNews = async (categoryId) => {
 // display Category News function 
 const displayCategoryNews = (newses) => {
     // console.log(newses);
-
     const notFount = document.getElementById('not-found');
     if (newses.length === 0) {
         notFount.classList.remove('d-none');
@@ -25,9 +27,9 @@ const displayCategoryNews = (newses) => {
 
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = ``;
-
     newses.forEach(news => {
         const div = document.createElement('div');
+
         // div.classList.add('card');
         console.log(news);
         div.innerHTML = `
