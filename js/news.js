@@ -2,15 +2,17 @@
 const loadCategoryNews = async (categoryId) => {
     loaderSpiner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${categoryId}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    const newsData = data.data;
-    const nwesSortData = newsData.sort((s1, s2) => s2.total_view - s1.total_view);
-    console.log(nwesSortData);
-    displayCategoryNews(nwesSortData);
-
-
-
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const newsData = data.data;
+        const nwesSortData = newsData.sort((s1, s2) => s2.total_view - s1.total_view);
+        console.log(nwesSortData);
+        displayCategoryNews(nwesSortData);
+    }
+    catch (error) {
+        console.log(error);
+    }
 }
 
 
@@ -44,7 +46,7 @@ const displayCategoryNews = (newses) => {
                     <div class="card-body text-start">
                         <div class="">
                         <h5 class="card-title mb-3">${news.title}</h5>
-                            <p class="card-text text-secondary">${news.details.slice(0, 400)}...</p>
+                            <p class="card-text text-secondary">${news.details.slice(0, 350)}...</p>
                         </div>
                         <div style="height: 150px;" class="d-flex justify-content-between align-items-end">
                             <div class="d-flex align-items-center">

@@ -1,10 +1,14 @@
 // load Deatils news function 
 const loadDeatilsnews = async (news_id) => {
     const url = `https://openapi.programming-hero.com/api/news/${news_id}?;`;
-    const res = await fetch(url);
-    const data = await res.json();
-    displayDetailsModal(data.data[0]);
-
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        displayDetailsModal(data.data[0]);
+    }
+    catch (error) {
+        console.log(error);
+    }
 }
 
 
