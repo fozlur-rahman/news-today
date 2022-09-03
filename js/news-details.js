@@ -1,3 +1,4 @@
+// load Deatils news function 
 const loadDeatilsnews = async (news_id) => {
     const url = `https://openapi.programming-hero.com/api/news/${news_id}?;`;
     const res = await fetch(url);
@@ -6,13 +7,15 @@ const loadDeatilsnews = async (news_id) => {
 
 }
 
+
+// display Details Modal function 
 const displayDetailsModal = (detailsNews) => {
     console.log(detailsNews)
     const detailsModal = document.getElementById('details-modal');
     detailsModal.innerHTML = ``;
     const div = document.createElement('div');
     div.innerHTML = `
-    <div style="max-height:80vh;" class="shadow my-3 p-4 rounded-3 overflow-scroll">
+            <div style="max-height:80vh;" class="shadow my-3 p-4 rounded-3 overflow-scroll">
                 <div class=" ">
                     
                     <img style="max-height:350px;" src="${detailsNews.thumbnail_url}" class="img-fluid rounded-start md-d-block w-100 " alt="...">
@@ -44,8 +47,7 @@ const displayDetailsModal = (detailsNews) => {
                         </div>
                     </div>
                 </div>
-                </div>
-                    
+                </div>        
     
     `
     detailsModal.append(div);

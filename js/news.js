@@ -1,3 +1,4 @@
+// load Category News function 
 const loadCategoryNews = async (categoryId) => {
     loaderSpiner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${categoryId}`;
@@ -8,6 +9,8 @@ const loadCategoryNews = async (categoryId) => {
 
 }
 
+
+// display Category News function 
 const displayCategoryNews = (newses) => {
     // console.log(newses);
 
@@ -69,6 +72,8 @@ const displayCategoryNews = (newses) => {
     loaderSpiner(false);
 }
 
+
+// loader Spiner function 
 const loaderSpiner = isloading => {
     const loaderSection = document.getElementById('spiner');
     if (isloading) {

@@ -1,3 +1,4 @@
+// load Categories function 
 const loadCategories = async () => {
     const url = `https://openapi.programming-hero.com/api/news/categories`;
     const res = await fetch(url);
@@ -6,6 +7,7 @@ const loadCategories = async () => {
     // console.log(data.data.news_category);
 }
 
+// display Categories function 
 const displayCategories = (categories) => {
     const categoriesContainer = document.getElementById('categories-conatiner');
     const categoryName = document.getElementById('category-name');
@@ -19,7 +21,6 @@ const displayCategories = (categories) => {
         `
         categoriesContainer.appendChild(li);
     });
-    
 }
 
 loadCategories();
