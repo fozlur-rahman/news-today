@@ -36,16 +36,16 @@ const displayCategoryNews = (newses) => {
         // div.classList.add('card');
         console.log(news);
         div.innerHTML = `
-            <button onclick="loadDeatilsnews('${news._id}')" type="button" class="btn border-0"     data-bs-toggle="modal" data-bs-target="#exampleModal"> 
-               <div class=" row g-0 shadow my-3 p-4 rounded-3">
+            <button onclick="loadDeatilsnews('${news._id}')" type="button" class="btn border-0 p-0"     data-bs-toggle="modal" data-bs-target="#exampleModal"> 
+
+               <div class=" row g-0 shadow my-2 rounded-3 p-3">
                 <div class="col-md-3 ">
                     <img src="${news.thumbnail_url}" class="img-fluid rounded-start md-d-block" alt="...">
                 </div>
-
                 <div class="col-md-9">
-                    <div class="card-body text-start">
+                    <div class="card-body text-start py-0 mt-3">
                         <div class="">
-                        <h5 class="card-title mb-3">${news.title}</h5>
+                        <h5 class="card-title">${news.title}</h5>
                             <p class="card-text text-secondary">${news.details.slice(0, 350)}...</p>
                         </div>
                         <div style="height: 150px;" class="d-flex justify-content-between align-items-end">

@@ -14,7 +14,7 @@ const loadCategories = async () => {
 // display Categories function 
 const displayCategories = (categories) => {
     const categoriesContainer = document.getElementById('categories-conatiner');
-    const categoryName = document.getElementById('category-name');
+    // const categoryName = document.getElementById('category-name');
 
     categories.forEach(category => {
         console.log(category);
